@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Masukkan Kode</h2>
+        <div action="selesai.html">
+            <input type="password" id="password" placeholder="give me da code!!!">
+            <br>
+            <button onclick="checkPassword()">Masukkin kode</button>
+        </div>
+
+        <script>
+            const validpassword ="sixtynine monarch";
+        
+            function checkPassword() {
+                const passwordInput = document.getElementById("password").value;
+                const errorMessage = document.getElementById("errorMessage");
+
+                if (passwordInput === validpassword) {
+                    window.location.href = "main page.html";
+                } else {
+                    errorMessage.style.display ="block";
+                    document.getElementById("password").value = ""
+                }
+            }
+
+            document.getElementById("password").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    checkPassword();
+                }
+            })
+        </script>
+        </form>
+    </div>
+</body>
+</html>
